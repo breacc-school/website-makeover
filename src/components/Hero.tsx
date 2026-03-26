@@ -4,7 +4,7 @@ import carnivalPhoto from "@/assets/carnival.png";
 import turmaSertaoPhoto from "@/assets/Turma-sertao.jpeg";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 
 const mobileImages = [
   { src: carnivalPhoto, alt: "Carnaval", border: "border-secondary" },
@@ -15,9 +15,20 @@ const mobileImages = [
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
+  const touchStartX = useRef(0);
 
   const next = useCallback(() => setCurrent((i) => (i + 1) % mobileImages.length), []);
   const prev = () => setCurrent((i) => (i - 1 + mobileImages.length) % mobileImages.length);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (delta > 50) next();
+    else if (delta < -50) prev();
+  };
 
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden bg-foreground">
@@ -86,18 +97,18 @@ const Hero = () => {
             <button
               type="button"
               onClick={prev}
-              className="absolute left-2 z-10 w-8 h-8 rounded-full bg-primary-foreground/20 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
+              className="absolute left-0 z-10 w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
               aria-label="Anterior"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <div className={`w-36 h-36 rounded-full overflow-hidden border-4 ${mobileImages[current].border} shadow-xl transition-all duration-500`}>
+            <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} className={`w-56 h-72 rounded-2xl overflow-hidden border-4 ${mobileImages[current].border} shadow-xl transition-all duration-500`}>
               <img src={mobileImages[current].src} alt={mobileImages[current].alt} className="w-full h-full object-cover" />
             </div>
             <button
               type="button"
               onClick={next}
-              className="absolute right-2 z-10 w-8 h-8 rounded-full bg-primary-foreground/20 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
+              className="absolute right-0 z-10 w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
               aria-label="Próximo"
             >
               <ChevronRight className="w-5 h-5" />

@@ -124,9 +124,7 @@ const Footer = () => {
 
         <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm">
           <a
-            href="https://www.breacc.org.uk/politicas-regras-e-itens-importantes/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#/politicas"
             className="inline-flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
           >
             <FileText className="w-4 h-4" />

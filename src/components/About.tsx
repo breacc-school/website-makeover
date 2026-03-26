@@ -1,6 +1,6 @@
 import { BookOpen, Users, Heart, Globe } from "lucide-react";
 
-const features = [
+const features: { icon: typeof BookOpen; title: string; desc: string; link?: string }[] = [
   {
     icon: BookOpen,
     title: "Ensino de Português",
@@ -14,7 +14,8 @@ const features = [
   {
     icon: Heart,
     title: "Cultura Viva",
-    desc: "Celebrações, música, dança e tradições que mantêm a cultura brasileira viva.",
+    desc: "Celebrações, música, dança e tradições que mantêm a cultura brasileira viva. Veja nossa galeria para fotos de eventos passados!",
+    link: "#/galeria",
   },
   {
     icon: Globe,
@@ -47,6 +48,11 @@ const About = () => {
               </div>
               <h3 className="font-heading text-xl font-bold text-foreground mb-2">{f.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
+              {f.link && (
+                <a href={f.link} className="inline-block mt-3 text-sm font-bold text-primary hover:underline">
+                  Ver galeria →
+                </a>
+              )}
             </div>
           ))}
         </div>
