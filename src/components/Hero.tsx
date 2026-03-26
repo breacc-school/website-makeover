@@ -1,6 +1,7 @@
 import teamPhoto from "@/assets/team.jpeg";
 import flagsPhoto from "@/assets/flags.jpg";
 import carnivalPhoto from "@/assets/carnival.png";
+import turmaSertaoPhoto from "@/assets/Turma-sertao.jpeg";
 import { scrollToSection } from "@/lib/scroll";
 
 const Hero = () => {
@@ -15,7 +16,7 @@ const Hero = () => {
             <span className="text-secondary">BREACC.</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-xl mx-auto lg:mx-0 mb-10 font-body">
-            Brazilian Educational and Cultural Centre — Preservando a língua e cultura brasileira no Reino Unido desde 1998.
+            Brazilian Educational and Cultural Centre — Preservando a língua e cultura brasileira no Reino Unido desde 1997.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
@@ -38,7 +39,7 @@ const Hero = () => {
         {/* Right — Photo Bubbles */}
         <div className="flex-1 relative min-h-[340px] md:min-h-[420px] w-full max-w-lg lg:max-w-none">
           {/* Bubble — carnival */}
-          <div className="absolute top-0 right-0 md:right-8 w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary shadow-2xl z-20">
+          <div className="absolute top-0 right-0 md:right-8 w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-secondary shadow-2xl z-20">
             <img
               src={carnivalPhoto}
               alt="Festa de carnaval do BREACC com bandeira do Brasil"
@@ -64,10 +65,26 @@ const Hero = () => {
             />
           </div>
 
+          {/* Bubble — turma sertão */}
+          <div className="absolute top-[25%] left-[25%] md:left-[30%] w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-primary shadow-2xl z-20">
+            <img
+              src={turmaSertaoPhoto}
+              alt="Turma Sertão do BREACC"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
           {/* Decorative circles */}
           <div className="absolute top-[15%] left-[30%] w-16 h-16 rounded-full bg-secondary/20 z-0" />
           <div className="absolute bottom-[25%] right-[40%] w-10 h-10 rounded-full bg-primary/20 z-0" />
           <div className="absolute top-[70%] right-[5%] w-8 h-8 rounded-full bg-accent/30 z-0" />
+          <div className="absolute top-[5%] left-[10%] w-12 h-12 rounded-full bg-primary/15 z-0" />
+          <div className="absolute top-[40%] left-[5%] w-6 h-6 rounded-full bg-secondary/25 z-0" />
+          <div className="absolute bottom-[10%] right-[25%] w-14 h-14 rounded-full bg-accent/20 z-0" />
+          <div className="absolute top-[80%] left-[40%] w-8 h-8 rounded-full bg-primary/10 z-0" />
+          <div className="absolute top-[60%] left-[15%] w-10 h-10 rounded-full bg-secondary/15 z-0" />
+          <div className="absolute bottom-[5%] right-[50%] w-6 h-6 rounded-full bg-accent/25 z-0" />
+          <div className="absolute top-[10%] right-[35%] w-8 h-8 rounded-full bg-secondary/20 z-0" />
         </div>
       </div>
     </section>

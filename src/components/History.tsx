@@ -44,6 +44,7 @@ const History = () => {
             na terra da rainha.
           </p>
         </div>
+
       </div>
     </section>
   );

@@ -1,24 +1,42 @@
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import History from "@/components/History";
 import LearningStages from "@/components/LearningStages";
 import Locations from "@/components/Locations";
 import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const sectionId = (location.state as { scrollTo?: string } | null)?.scrollTo;
+    if (!sectionId) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+      navigate(location.pathname, { replace: true, state: null });
+    }, 100);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [location.pathname, location.state, navigate]);
+
   return (
     <div className="min-h-screen">
       <Navbar />
       <Hero />
       <About />
-      <History />
       <LearningStages />
       <Locations />
       <Testimonials />
-      <FAQ />
       <Footer />
     </div>
   );
