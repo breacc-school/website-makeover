@@ -37,9 +37,9 @@ const Hero = () => {
         </div>
 
         {/* Right — Photo Bubbles */}
-        <div className="flex-1 relative min-h-[340px] md:min-h-[420px] w-full max-w-lg lg:max-w-none">
+        <div className="flex-1 relative min-h-[380px] md:min-h-[480px] w-full max-w-lg lg:max-w-none">
           {/* Bubble — carnival */}
-          <div className="absolute top-0 right-0 md:right-8 w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-secondary shadow-2xl z-20">
+          <div className="absolute top-0 right-0 md:right-8 w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-secondary shadow-2xl z-20">
             <img
               src={carnivalPhoto}
               alt="Festa de carnaval do BREACC com bandeira do Brasil"
@@ -48,7 +48,7 @@ const Hero = () => {
           </div>
 
           {/* Bubble — team */}
-          <div className="absolute bottom-4 left-0 md:left-4 w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-secondary shadow-2xl z-30">
+          <div className="absolute bottom-4 left-0 md:left-4 w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-secondary shadow-2xl z-30">
             <img
               src={teamPhoto}
               alt="Equipe do BREACC com camisetas verdes"
@@ -57,7 +57,7 @@ const Hero = () => {
           </div>
 
           {/* Bubble — flags */}
-          <div className="absolute top-[50%] right-[5%] md:right-[15%] w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-accent shadow-2xl z-10">
+          <div className="absolute top-[50%] right-[5%] md:right-[15%] w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-accent shadow-2xl z-10">
             <img
               src={flagsPhoto}
               alt="Artesanato com bandeiras do Brasil"
@@ -66,7 +66,7 @@ const Hero = () => {
           </div>
 
           {/* Bubble — turma sertão */}
-          <div className="absolute top-[25%] left-[25%] md:left-[30%] w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-primary shadow-2xl z-20">
+          <div className="absolute top-[25%] left-[25%] md:left-[30%] w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-primary shadow-2xl z-20">
             <img
               src={turmaSertaoPhoto}
               alt="Turma Sertão do BREACC"
