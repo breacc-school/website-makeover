@@ -6,9 +6,11 @@ import { scrollToSection } from "@/lib/scroll";
 const navItems = [
   { label: "Home", id: "home" },
   { label: "Sobre", id: "sobre" },
+  { label: "História", id: "historia" },
   { label: "Grupos", id: "grupos" },
   { label: "Unidades", id: "unidades" },
   { label: "Testemunhos", id: "testemunhos" },
+  { label: "FAQ", id: "faq" },
   { label: "Contato", id: "contato" },
 ];
 

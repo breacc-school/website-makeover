@@ -1,4 +1,4 @@
-import { Mail, Facebook, Instagram } from "lucide-react";
+import { Mail, Facebook, Instagram, FileText, Briefcase } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -38,6 +38,27 @@ const Footer = () => {
             aria-label="Instagram"
           >
             <Instagram className="w-6 h-6 text-secondary-foreground" />
+          </a>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm">
+          <a
+            href="https://www.breacc.org.uk/politicas-regras-e-itens-importantes/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+          >
+            <FileText className="w-4 h-4" />
+            Políticas e Regras
+          </a>
+          <a
+            href="https://www.breacc.org.uk/politicas-regras-e-itens-importantes/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+          >
+            <Briefcase className="w-4 h-4" />
+            Trabalhe Conosco
           </a>
         </div>
 
