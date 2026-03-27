@@ -2,6 +2,8 @@ import teamPhoto from "@/assets/team.jpeg";
 import flagsPhoto from "@/assets/flags.jpg";
 import carnivalPhoto from "@/assets/carnival.png";
 import turmaSertaoPhoto from "@/assets/Turma-sertao.jpeg";
+import juninaPhoto from "@/assets/gallery/Festa Junina - 2019/festa-junina-2019-2.jpeg";
+import parintinsPhoto from "@/assets/gallery/Carnaval de Parintins/Carnaval-de-Parintins-2.jpeg";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll";
 import { useState, useCallback, useRef } from "react";
@@ -11,6 +13,8 @@ const mobileImages = [
   { src: teamPhoto, alt: "Equipe", border: "border-secondary" },
   { src: turmaSertaoPhoto, alt: "Turma Sertão", border: "border-primary" },
   { src: flagsPhoto, alt: "Bandeiras", border: "border-accent" },
+  { src: juninaPhoto, alt: "Festa Junina", border: "border-secondary" },
+  { src: parintinsPhoto, alt: "Carnaval de Parintins", border: "border-primary" },
 ];
 
 const Hero = () => {
