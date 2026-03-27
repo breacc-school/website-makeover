@@ -1,26 +1,34 @@
 import { BookOpen, Users, Heart, Globe } from "lucide-react";
 
-const features: { icon: typeof BookOpen; title: string; desc: string; link?: string }[] = [
+const features: { icon: typeof BookOpen; title: string; desc: string; link?: string; iconBg: string; iconColor: string }[] = [
   {
     icon: BookOpen,
     title: "Ensino de Português",
     desc: "Aulas semanais que desenvolvem a leitura, escrita e comunicação em português.",
+    iconBg: "bg-primary/10",
+    iconColor: "text-primary",
   },
   {
     icon: Users,
     title: "Comunidade",
     desc: "Um espaço de convivência para famílias brasileiras e lusófonas no Reino Unido.",
+    iconBg: "bg-accent/10",
+    iconColor: "text-accent",
   },
   {
     icon: Heart,
     title: "Cultura Viva",
-    desc: "Celebrações, música, dança e tradições que mantêm a cultura brasileira viva. Veja nossa galeria para fotos de eventos passados!",
+    desc: "Celebrações, música, dança e tradições que mantêm a cultura brasileira viva",
     link: "#/galeria",
+    iconBg: "bg-secondary/20",
+    iconColor: "text-secondary-foreground",
   },
   {
     icon: Globe,
     title: "Identidade Bilíngue",
     desc: "Ajudamos crianças a desenvolverem uma identidade bicultural forte e orgulhosa.",
+    iconBg: "bg-primary/10",
+    iconColor: "text-primary",
   },
 ];
 
@@ -43,8 +51,8 @@ const About = () => {
               key={f.title}
               className="bg-card rounded-xl p-8 shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
-                <f.icon className="w-7 h-7 text-primary" />
+              <div className={`w-14 h-14 rounded-lg ${f.iconBg} flex items-center justify-center mb-5`}>
+                <f.icon className={`w-7 h-7 ${f.iconColor}`} />
               </div>
               <h3 className="font-heading text-xl font-bold text-foreground mb-2">{f.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
