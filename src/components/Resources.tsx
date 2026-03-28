@@ -1,7 +1,7 @@
 import { Music } from "lucide-react";
 
 const Resources = () => (
-  <section id="recursos" className="py-16 md:py-24 bg-background">
+  <section id="recursos" className="py-10 md:py-16 bg-background">
     <div className="container px-6">
       <div className="text-center mb-12">
         <span className="inline-block text-sm font-bold tracking-wider uppercase text-secondary mb-2">
