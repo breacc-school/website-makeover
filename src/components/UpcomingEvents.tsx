@@ -45,7 +45,7 @@ const UpcomingEvents = () => (
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+      <div className="flex justify-center max-w-md mx-auto">
         {events.map((ev, i) => (
           <div
             key={i}
