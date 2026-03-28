@@ -47,7 +47,7 @@ const typeBadge = {
 };
 
 const UpcomingEvents = () => (
-  <section id="eventos" className="py-16 md:py-24 bg-muted/40">
+  <section id="eventos" className="py-10 md:py-16 bg-muted/40">
     <div className="container px-6">
       <div className="text-center mb-12">
         <span className="inline-block text-sm font-bold tracking-wider uppercase text-secondary mb-2">
