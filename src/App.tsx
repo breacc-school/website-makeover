@@ -12,6 +12,7 @@ import FAQPage from "./pages/FAQPage.tsx";
 import GalleryPage from "./pages/GalleryPage.tsx";
 import EquipePage from "./pages/EquipePage.tsx";
 import PoliciesPage from "./pages/PoliciesPage.tsx";
+import ResourcesPage from "./pages/ResourcesPage.tsx";
 
 const queryClient = new QueryClient();
 
