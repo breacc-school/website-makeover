@@ -21,7 +21,8 @@ const Index = () => {
     const timeoutId = window.setTimeout(() => {
       const el = document.getElementById(sectionId);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+        const isMobile = window.innerWidth < 768;
+        el.scrollIntoView({ behavior: isMobile ? "auto" : "smooth" });
       }
       navigate(location.pathname, { replace: true, state: null });
     }, 100);

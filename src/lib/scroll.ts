@@ -2,6 +2,7 @@ export const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionI
   e.preventDefault();
   const el = document.getElementById(sectionId);
   if (el) {
-    el.scrollIntoView({ behavior: "smooth" });
+    const isMobile = window.innerWidth < 768;
+    el.scrollIntoView({ behavior: isMobile ? "auto" : "smooth" });
   }
 };
