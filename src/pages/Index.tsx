@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import UpcomingEvents from "@/components/UpcomingEvents";
 import About from "@/components/About";
 import LearningStages from "@/components/LearningStages";
 import Locations from "@/components/Locations";
+import Resources from "@/components/Resources";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
@@ -34,9 +36,11 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <UpcomingEvents />
       <About />
       <LearningStages />
       <Locations />
+      <Resources />
       <Testimonials />
       <Footer />
     </div>
