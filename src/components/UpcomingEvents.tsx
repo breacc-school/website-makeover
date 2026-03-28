@@ -11,23 +11,7 @@ interface Event {
 
 const events: Event[] = [
   {
-    title: "Open Day — Turma Novas Famílias",
-    date: "Em breve",
-    time: "A confirmar",
-    location: "A confirmar",
-    type: "open-day",
-    description: "Venha conhecer o BREACC! Dia de portas abertas para novas famílias interessadas.",
-  },
-  {
-    title: "Open Day — Turma Novas Famílias",
-    date: "Em breve",
-    time: "A confirmar",
-    location: "A confirmar",
-    type: "open-day",
-    description: "Segunda oportunidade para visitar nossas instalações e conhecer a equipe.",
-  },
-  {
-    title: "Festa Junina 2025",
+    title: "Festa Junina 2026",
     date: "Em breve",
     time: "A confirmar",
     location: "A confirmar",
