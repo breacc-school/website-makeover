@@ -7,7 +7,6 @@ import About from "@/components/About";
 import LearningStages from "@/components/LearningStages";
 import Locations from "@/components/Locations";
 import Testimonials from "@/components/Testimonials";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 const Index = () => {
