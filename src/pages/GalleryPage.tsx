@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Gallery from "@/components/Gallery";
+import Resources from "@/components/Resources";
 import Footer from "@/components/Footer";
 
 const GalleryPage = () => {
@@ -8,6 +9,7 @@ const GalleryPage = () => {
       <Navbar />
       <div className="pt-16">
         <Gallery />
+        <Resources />
       </div>
       <Footer />
     </div>
