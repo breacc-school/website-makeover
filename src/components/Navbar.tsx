@@ -1,34 +1,35 @@
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo.png";
 import { scrollToSection } from "@/lib/scroll";
 
 type NavLinkItem =
-  | { label: string; type: "route"; href: string }
-  | { label: string; type: "scroll"; id: string };
+  | { key: string; type: "route"; href: string }
+  | { key: string; type: "scroll"; id: string };
 
-type NavItem = NavLinkItem | { label: string; type: "group"; children: NavLinkItem[] };
+type NavItem = NavLinkItem | { key: string; type: "group"; children: NavLinkItem[] };
 
 const navItems: NavItem[] = [
-  { label: "Home", type: "route", href: "/" },
+  { key: "home", type: "route", href: "/" },
   {
-    label: "Sobre",
+    key: "about",
     type: "group",
     children: [
-      { label: "Sobre", type: "scroll", id: "sobre" },
-      { label: "História", type: "route", href: "/historia" },
-      { label: "Equipe", type: "route", href: "/equipe" },
-      { label: "Grupos", type: "scroll", id: "grupos" },
-      { label: "Unidades", type: "scroll", id: "unidades" },
+      { key: "about", type: "scroll", id: "sobre" },
+      { key: "history", type: "route", href: "/historia" },
+      { key: "team", type: "route", href: "/equipe" },
+      { key: "groups", type: "scroll", id: "grupos" },
+      { key: "locations", type: "scroll", id: "unidades" },
     ],
   },
-  { label: "Eventos", type: "scroll", id: "eventos" },
-  { label: "Testemunhos", type: "scroll", id: "testemunhos" },
-  { label: "Galeria", type: "route", href: "/galeria" },
-  { label: "Recursos", type: "route", href: "/recursos" },
-  { label: "FAQ", type: "route", href: "/faq" },
-  { label: "Contato", type: "scroll", id: "contato" },
+  { key: "events", type: "scroll", id: "eventos" },
+  { key: "testimonials", type: "scroll", id: "testemunhos" },
+  { key: "gallery", type: "route", href: "/galeria" },
+  { key: "resources", type: "route", href: "/recursos" },
+  { key: "faq", type: "route", href: "/faq" },
+  { key: "contact", type: "scroll", id: "contato" },
 ];
 
 const Navbar = () => {
@@ -36,6 +37,14 @@ const Navbar = () => {
   const [mobileSobreOpen, setMobileSobreOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+
+  const label = (key: string) => t(`nav.${key}`);
+
+  const toggleLang = () => {
+    const next = i18n.language?.startsWith("pt") ? "en" : "pt";
+    i18n.changeLanguage(next);
+  };
 
   const handleNavClick = (e: React.MouseEvent, item: NavLinkItem) => {
     if (item.type === "route") {
@@ -61,30 +70,30 @@ const Navbar = () => {
         <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }} className="flex items-center gap-2">
           <img src={logo} alt="BREACC Logo" className="h-12 w-auto" />
         </a>
-        
+
         {/* Desktop */}
         <ul className="hidden md:flex gap-8 items-center">
           {navItems.map((item) => (
-            <li key={item.label} className={item.type === "group" ? "relative group" : ""}>
+            <li key={item.key + item.type} className={item.type === "group" ? "relative group" : ""}>
               {item.type === "group" ? (
                 <>
                   <button
                     onClick={(e) => handleNavClick(e, item.children[0])}
                     className="flex items-center gap-1 text-sm font-semibold text-foreground/70 hover:text-primary transition-colors"
                   >
-                    {item.label}
+                    {label(item.key)}
                     <ChevronDown size={16} className="mt-0.5" />
                   </button>
                   <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="min-w-44 rounded-md border border-border bg-card shadow-lg p-1">
                       {item.children.map((subItem) => (
                         <a
-                          key={subItem.label}
+                          key={subItem.key}
                           href={subItem.type === "route" ? subItem.href : `#${subItem.id}`}
                           onClick={(e) => handleNavClick(e, subItem)}
                           className="block rounded px-3 py-2 text-sm font-semibold text-foreground/70 hover:bg-muted hover:text-primary transition-colors"
                         >
-                          {subItem.label}
+                          {label(subItem.key)}
                         </a>
                       ))}
                     </div>
@@ -96,21 +105,41 @@ const Navbar = () => {
                   onClick={(e) => handleNavClick(e, item)}
                   className="text-sm font-semibold text-foreground/70 hover:text-primary transition-colors"
                 >
-                  {item.label}
+                  {label(item.key)}
                 </a>
               )}
             </li>
           ))}
+          <li>
+            <button
+              onClick={toggleLang}
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-3 py-1.5 text-sm font-semibold hover:bg-muted/80 transition-colors"
+              aria-label="Toggle language"
+            >
+              <span className="text-base">{i18n.language?.startsWith("pt") ? "🇧🇷" : "🇬🇧"}</span>
+              <span className="text-foreground/70">{i18n.language?.startsWith("pt") ? "PT" : "EN"}</span>
+            </button>
+          </li>
         </ul>
 
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile toggle + lang */}
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggleLang}
+            className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-2.5 py-1 text-sm font-semibold hover:bg-muted/80 transition-colors"
+            aria-label="Toggle language"
+          >
+            <span className="text-base">{i18n.language?.startsWith("pt") ? "🇧🇷" : "🇬🇧"}</span>
+            <span className="text-foreground/70">{i18n.language?.startsWith("pt") ? "PT" : "EN"}</span>
+          </button>
+          <button
+            className="text-foreground"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -118,14 +147,14 @@ const Navbar = () => {
         <div className="md:hidden bg-card border-b border-border">
           <ul className="flex flex-col p-4 gap-4">
             {navItems.map((item) => (
-              <li key={item.label}>
+              <li key={item.key + item.type}>
                 {item.type === "group" ? (
                   <>
                     <button
                       className="w-full flex items-center justify-between text-sm font-semibold text-foreground/70 hover:text-primary transition-colors"
                       onClick={() => setMobileSobreOpen((prev) => !prev)}
                     >
-                      <span>{item.label}</span>
+                      <span>{label(item.key)}</span>
                       <ChevronDown
                         size={16}
                         className={`transition-transform duration-200 ${mobileSobreOpen ? "rotate-180" : ""}`}
@@ -134,13 +163,13 @@ const Navbar = () => {
                     {mobileSobreOpen && (
                       <ul className="mt-2 ml-3 pl-3 border-l border-border flex flex-col gap-3">
                         {item.children.map((subItem) => (
-                          <li key={subItem.label}>
+                          <li key={subItem.key}>
                             <a
                               href={subItem.type === "route" ? subItem.href : `#${subItem.id}`}
                               className="text-sm font-semibold text-foreground/70 hover:text-primary transition-colors"
                               onClick={(e) => handleNavClick(e, subItem)}
                             >
-                              {subItem.label}
+                              {label(subItem.key)}
                             </a>
                           </li>
                         ))}
@@ -153,7 +182,7 @@ const Navbar = () => {
                     className="text-sm font-semibold text-foreground/70 hover:text-primary transition-colors"
                     onClick={(e) => handleNavClick(e, item)}
                   >
-                    {item.label}
+                    {label(item.key)}
                   </a>
                 )}
               </li>

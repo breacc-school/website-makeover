@@ -7,6 +7,7 @@ import parintinsPhoto from "@/assets/gallery/Carnaval de Parintins/Carnaval-de-P
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll";
 import { useState, useCallback, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const mobileImages = [
   { src: carnivalPhoto, alt: "Carnaval", border: "border-secondary" },
@@ -20,6 +21,7 @@ const mobileImages = [
 const Hero = () => {
   const [current, setCurrent] = useState(0);
   const touchStartX = useRef(0);
+  const { t } = useTranslation();
 
   const next = useCallback(() => setCurrent((i) => (i + 1) % mobileImages.length), []);
   const prev = () => setCurrent((i) => (i - 1 + mobileImages.length) % mobileImages.length);
@@ -71,11 +73,11 @@ const Hero = () => {
       <div className="container px-6 py-20 relative z-10">
         <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-black text-primary-foreground mb-6 leading-tight">
-            Bem-vindos ao{" "}
+            {t("hero.welcome")}{" "}
             <span className="text-secondary">BREACC.</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 font-body">
-            Brazilian Educational and Cultural Centre — Preservando a língua e cultura brasileira no Reino Unido desde 1997.
+            {t("hero.subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
@@ -83,14 +85,14 @@ const Hero = () => {
               onClick={(e) => scrollToSection(e, "grupos")}
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-secondary text-secondary-foreground font-bold text-lg hover:brightness-110 transition-all"
             >
-              Conheça nossos grupos
+              {t("hero.cta_groups")}
             </a>
             <a
               href="#contato"
               onClick={(e) => scrollToSection(e, "contato")}
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-primary-foreground/30 text-primary-foreground font-bold text-lg hover:bg-primary-foreground/10 transition-all"
             >
-              Agende uma visita
+              {t("hero.cta_visit")}
             </a>
           </div>
         </div>
@@ -102,7 +104,7 @@ const Hero = () => {
               type="button"
               onClick={prev}
               className="absolute left-0 z-10 w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
-              aria-label="Anterior"
+              aria-label={t("hero.prev")}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -113,7 +115,7 @@ const Hero = () => {
               type="button"
               onClick={next}
               className="absolute right-0 z-10 w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
-              aria-label="Próximo"
+              aria-label={t("hero.next")}
             >
               <ChevronRight className="w-5 h-5" />
             </button>

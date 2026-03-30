@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { useTranslation } from "react-i18next";
 
 const imageModules = import.meta.glob<{ default: string }>(
   "/src/assets/gallery/**/*.{jpg,jpeg,png,webp,gif,JPG,JPEG,PNG,WEBP,GIF}",
   { eager: true }
 );
 
-// Parses a date from folder names ending in " - YYYY", " - YYYY-MM" or " - YYYY-MM-DD".
-// Albums without a date get a timestamp of 0 and sort to the bottom.
 function parseFolderDate(name: string): number {
   const match = name.match(/\s*-\s*(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/);
   if (!match) return 0;
@@ -18,12 +17,10 @@ function parseFolderDate(name: string): number {
   return new Date(year, month, day).getTime();
 }
 
-// Strips the trailing " - {date}" from the folder name for display.
 function displayName(name: string): string {
   return name.replace(/\s*-\s*\d{4}(?:-\d{2}(?:-\d{2})?)?$/, "").trim();
 }
 
-// Extracts just the year (or full date) for the subtitle badge.
 function dateLabel(name: string): string | null {
   const match = name.match(/(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/);
   return match ? match[1] : null;
@@ -44,9 +41,9 @@ function buildAlbums(): Album[] {
   }
   return Object.entries(map)
     .sort(([a], [b]) => {
-      const diff = parseFolderDate(b) - parseFolderDate(a); // newest first
+      const diff = parseFolderDate(b) - parseFolderDate(a);
       if (diff !== 0) return diff;
-      return a.localeCompare(b); // alphabetical tiebreak
+      return a.localeCompare(b);
     })
     .map(([folderName, images]) => ({
       folderName,
@@ -61,6 +58,7 @@ const albums = buildAlbums();
 const Gallery = () => {
   const [openAlbums, setOpenAlbums] = useState<Record<string, boolean>>({});
   const [lightbox, setLightbox] = useState<{ aIdx: number; iIdx: number } | null>(null);
+  const { t } = useTranslation();
 
   const toggleAlbum = (folderName: string) =>
     setOpenAlbums((prev) => ({ ...prev, [folderName]: !prev[folderName] }));
@@ -88,16 +86,15 @@ const Gallery = () => {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
+  const photoCount = (count: number) =>
+    count === 1 ? t("gallery.photo_count", { count }) : t("gallery.photo_count_plural", { count });
+
   if (albums.length === 0) {
     return (
       <section className="py-24 bg-background">
         <div className="container px-4 text-center">
-          <h2 className="font-heading text-4xl font-bold text-foreground mb-4">Galeria</h2>
-          <p className="text-muted-foreground">
-            Nenhum álbum encontrado. Crie uma pasta em{" "}
-            <code className="bg-muted px-1 rounded text-sm">src/assets/gallery/</code>{" "}
-            com o nome do evento e adicione as fotos dentro.
-          </p>
+          <h2 className="font-heading text-4xl font-bold text-foreground mb-4">{t("gallery.title")}</h2>
+          <p className="text-muted-foreground">{t("gallery.empty")}</p>
         </div>
       </section>
     );
@@ -109,10 +106,10 @@ const Gallery = () => {
         <div className="container px-4">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Galeria
+              {t("gallery.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Momentos especiais do BREACC em fotos.
+              {t("gallery.subtitle")}
             </p>
           </div>
 
@@ -136,7 +133,7 @@ const Gallery = () => {
                       )}
                     </span>
                     <span className="flex items-center gap-2 text-sm text-muted-foreground shrink-0 ml-4">
-                      {album.images.length} foto{album.images.length !== 1 ? "s" : ""}
+                      {photoCount(album.images.length)}
                       <ChevronDown
                         size={18}
                         className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
@@ -173,7 +170,7 @@ const Gallery = () => {
 
       <Dialog open={lightbox !== null} onOpenChange={(open) => !open && setLightbox(null)}>
         <DialogContent className="max-w-5xl border-0 bg-black/95 p-6">
-          <DialogTitle className="sr-only">Visualizar foto</DialogTitle>
+          <DialogTitle className="sr-only">{t("gallery.view_photo")}</DialogTitle>
           <div className="relative flex items-center justify-center">
             {current && (
               <img
