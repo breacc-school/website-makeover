@@ -13,6 +13,7 @@ const groups = [
   { key: "sertao", emoji: "🌵", color: "bg-primary/10" },
   { key: "amazonia", emoji: "🌿", color: "bg-secondary/30" },
   { key: "cerrado", emoji: "🌾", color: "bg-accent/10" },
+  { key: "gcse", emoji: "📚", color: "bg-primary/10" },
 ];
 
 const LearningStages = () => {

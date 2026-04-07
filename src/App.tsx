@@ -12,7 +12,7 @@ import FAQPage from "./pages/FAQPage.tsx";
 import GalleryPage from "./pages/GalleryPage.tsx";
 import EquipePage from "./pages/EquipePage.tsx";
 import PoliciesPage from "./pages/PoliciesPage.tsx";
-import ResourcesPage from "./pages/ResourcesPage.tsx";
+// Resources merged into GalleryPage
 
 const queryClient = new QueryClient();
 
@@ -41,7 +41,7 @@ const App = () => (
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/galeria" element={<GalleryPage />} />
           <Route path="/politicas" element={<PoliciesPage />} />
-          <Route path="/recursos" element={<ResourcesPage />} />
+          {/* /recursos redirects to gallery now */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

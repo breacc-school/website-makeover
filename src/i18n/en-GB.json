@@ -47,7 +47,7 @@
   },
   "groups": {
     "title": "Learning Stages",
-    "subtitle": "Six distinct stages that develop social, motor and linguistic skills in varied ways.",
+    "subtitle": "Distinct stages that develop social, motor and linguistic skills in varied ways.",
     "contact": "Get in Touch →",
     "jardim_name": "Turma Jardim",
     "jardim_age": "2 to 3 years",
@@ -66,7 +66,10 @@
     "amazonia_desc": "From 10 to 12 years old, this group expands children's oral communication skills and focuses on various aspects of expression in Portuguese. Children are exposed to songs, games and texts that are gradually more complex and begin to develop a greater appreciation for using the language. Group activities aim to encourage interaction between children and an effective exchange of experiences.",
     "cerrado_name": "Turma Cerrado",
     "cerrado_age": "from 13 years",
-    "cerrado_desc": "This group uses educational activities to consolidate grammatical, literary, playful and numerical skills based on the needs of young people. With teenagers from 13 years of age, this group offers great support to those who wish to prepare for the General Certificate of Secondary Education (GCSE) in Portuguese. Students are motivated to write in a more academic way, expressing their opinions and reinterpreting literary and artistic works."
+    "cerrado_desc": "This group uses educational activities to consolidate grammatical, literary, playful and numerical skills based on the needs of young people. With teenagers from 13 years of age, this group offers great support to those who wish to prepare for the General Certificate of Secondary Education (GCSE) in Portuguese. Students are motivated to write in a more academic way, expressing their opinions and reinterpreting literary and artistic works.",
+    "gcse_name": "GCSE Prep Course",
+    "gcse_age": "Online",
+    "gcse_desc": "Portuguese is more than an extracurricular subject: it is heritage, history and family. At BREACC, we recognise the importance of strengthening this connection. That is why we offer an online Preparatory Course for the Portuguese GCSE exam.\n\n• Specialist teachers\n• Exam-focused content\n• Small groups\n• 100% online classes\n\nOur goal goes beyond passing: we want to strengthen the confidence and pride of being bilingual. Join us to turn Portuguese fluency into a meaningful qualification that celebrates your roots."
   },
   "locations": {
     "title": "Our Locations",

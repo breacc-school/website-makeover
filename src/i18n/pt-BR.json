@@ -47,7 +47,7 @@
   },
   "groups": {
     "title": "Estágios de Aprendizagem",
-    "subtitle": "Seis estágios distintos que desenvolvem habilidades sociais, motoras e linguísticas de formas variadas.",
+    "subtitle": "Estágios distintos que desenvolvem habilidades sociais, motoras e linguísticas de formas variadas.",
     "contact": "Fale Conosco →",
     "jardim_name": "Turma Jardim",
     "jardim_age": "2 a 3 anos",
@@ -66,7 +66,10 @@
     "amazonia_desc": "Dos 10 aos 12 anos, esse grupo expande a habilidade de comunicação oral da criança e enfoca vários aspectos da expressão em Língua Portuguesa. A criança é exposta a músicas, jogos e textos gradualmente mais complexos e começa a desenvolver maior apreciação pelo uso da língua. As atividades em grupo visam a interação entre as crianças e a troca efetiva de experiências.",
     "cerrado_name": "Turma Cerrado",
     "cerrado_age": "a partir de 13 anos",
-    "cerrado_desc": "Se utiliza de atividades pedagógicas para consolidar habilidades gramaticais, literárias, lúdicas e numéricas baseadas nas necessidades dos jovens. Com adolescentes a partir de 13 anos de idade, esse grupo oferece grande apoio àqueles que querem se preparar para o Certificado de Estudos Gerais Secundários (GCSE) em português. Os alunos são motivados a escreverem de forma mais acadêmica, expressando suas opiniões e fazendo releituras de obras literárias e artísticas."
+    "cerrado_desc": "Se utiliza de atividades pedagógicas para consolidar habilidades gramaticais, literárias, lúdicas e numéricas baseadas nas necessidades dos jovens. Com adolescentes a partir de 13 anos de idade, esse grupo oferece grande apoio àqueles que querem se preparar para o Certificado de Estudos Gerais Secundários (GCSE) em português. Os alunos são motivados a escreverem de forma mais acadêmica, expressando suas opiniões e fazendo releituras de obras literárias e artísticas.",
+    "gcse_name": "Curso Preparatório GCSE",
+    "gcse_age": "Online",
+    "gcse_desc": "O português é mais do que uma disciplina extracurricular: é herança, história e família. No BREACC, reconhecemos a importância de fortalecer essa conexão. Por isso, oferecemos um Curso Preparatório online para o exame GCSE de Português.\n\n• Professores especializados\n• Conteúdo focado no exame\n• Grupos reduzidos\n• Aulas 100% online\n\nNosso objetivo vai além da aprovação: queremos fortalecer a confiança e o orgulho de ser bilíngue. Junte-se a nós para transformar a fluência em português em uma certificação de peso que celebra suas raízes."
   },
   "locations": {
     "title": "Nossas Unidades",

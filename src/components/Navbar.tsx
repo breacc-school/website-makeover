@@ -27,7 +27,6 @@ const navItems: NavItem[] = [
   { key: "events", type: "scroll", id: "eventos" },
   { key: "testimonials", type: "scroll", id: "testemunhos" },
   { key: "gallery", type: "route", href: "/galeria" },
-  { key: "resources", type: "route", href: "/recursos" },
   { key: "faq", type: "route", href: "/faq" },
   { key: "contact", type: "scroll", id: "contato" },
 ];
