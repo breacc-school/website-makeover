@@ -32,16 +32,13 @@ const Footer = () => {
   return (
     <footer id="contato" className="py-16 bg-foreground">
       <div className="container px-4">
-        <div className="text-center mb-10">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+        <div className="max-w-lg mx-auto text-center mb-8">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
             {t("footer.title")}
           </h2>
-          <p className="text-primary-foreground/70 max-w-lg mx-auto">
+          <p className="text-primary-foreground/70 mb-5">
             {t("footer.subtitle")}
           </p>
-        </div>
-
-        <div className="max-w-lg mx-auto mb-6 text-center">
           <a
             href="https://forms.gle/9SpcurUZGr6RSjyr6"
             target="_blank"
@@ -50,7 +47,7 @@ const Footer = () => {
           >
             {t("footer.enrol_button")}
           </a>
-          <p className="mt-4 text-primary-foreground/60 text-sm">
+          <p className="mt-5 text-primary-foreground/60 text-sm">
             {t("footer.enrol_or")}
           </p>
         </div>
