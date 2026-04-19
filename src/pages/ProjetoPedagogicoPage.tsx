@@ -35,6 +35,31 @@ const ProjetoPedagogicoPage = () => {
               </h1>
             </div>
 
+            {/* Tema Transversal */}
+            <div className="mb-16 rounded-2xl bg-primary text-primary-foreground p-8 md:p-10">
+              <p className="text-sm font-bold uppercase tracking-widest text-primary-foreground/60 mb-3">
+                {t("pedagogy.tema_label")}
+              </p>
+              <h2 className="font-heading text-2xl md:text-3xl font-black mb-2 leading-snug">
+                {t("pedagogy.tema_title")}
+              </h2>
+              <p className="text-primary-foreground/80 leading-relaxed mb-8">
+                {t("pedagogy.tema_desc")}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { key: "p1", label: t("pedagogy.p1_label") },
+                  { key: "p2", label: t("pedagogy.p2_label") },
+                  { key: "p3", label: t("pedagogy.p3_label") },
+                ].map((p) => (
+                  <div key={p.key} className="rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 p-5">
+                    <p className="text-xs font-bold uppercase tracking-wider text-secondary mb-2">{t(`pedagogy.${p.key}_period`)}</p>
+                    <p className="font-semibold text-primary-foreground leading-snug">{p.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Estágios de aprendizagem */}
             <div className="mb-16">
               <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
