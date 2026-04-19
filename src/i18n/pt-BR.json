@@ -168,9 +168,8 @@
   },
   "footer": {
     "title": "Fale Conosco",
-    "enrol_button": "Preencher formulário de matrícula",
-    "enrol_or": "Ou entre em contato para mais informações:",
-    "subtitle": "Venha para o BREACC! Preencha o formulário abaixo para matrículas.",
+    "enrol_text": "Venha para o BREACC! Preencha o <a>formulário</a> para matrículas. Ou entre em contato para mais informações:",
+    "subtitle": "Venha para o BREACC!",
     "form_subject": "Nova mensagem pelo site do BREACC",
     "name": "Nome",
     "email": "Email",

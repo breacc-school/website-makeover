@@ -168,9 +168,8 @@
   },
   "footer": {
     "title": "Get in Touch",
-    "enrol_button": "Fill in the enrolment form",
-    "enrol_or": "Or get in touch for more information:",
-    "subtitle": "Come to BREACC! Fill in the form below to enrol.",
+    "enrol_text": "Come to BREACC! Fill in the <a>enrolment form</a> to sign up. Or get in touch for more information:",
+    "subtitle": "Come to BREACC!",
     "form_subject": "New message from the BREACC website",
     "name": "Name",
     "email": "Email",

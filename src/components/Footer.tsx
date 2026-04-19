@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Mail, Facebook, Instagram, FileText, Briefcase, Send, CheckCircle } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 
 const Footer = () => {
   const [formResult, setFormResult] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -36,19 +36,20 @@ const Footer = () => {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
             {t("footer.title")}
           </h2>
-          <p className="text-primary-foreground/70 mb-5">
-            {t("footer.subtitle")}
-          </p>
-          <a
-            href="https://forms.gle/9SpcurUZGr6RSjyr6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-secondary text-secondary-foreground font-bold px-6 py-3 text-sm hover:brightness-110 transition-all"
-          >
-            {t("footer.enrol_button")}
-          </a>
-          <p className="mt-5 text-primary-foreground/60 text-sm">
-            {t("footer.enrol_or")}
+          <p className="text-primary-foreground/70">
+            <Trans
+              i18nKey="footer.enrol_text"
+              components={{
+                a: (
+                  <a
+                    href="https://forms.gle/9SpcurUZGr6RSjyr6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline font-semibold text-secondary hover:brightness-125 transition-colors"
+                  />
+                ),
+              }}
+            />
           </p>
         </div>
 
