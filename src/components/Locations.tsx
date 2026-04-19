@@ -5,14 +5,18 @@ const locations = [
   {
     key: "bournemouth",
     address: "Anglo Continental School, 29-35 Wimborne RD, Bournemouth BH2 6NA",
-    social: "https://www.instagram.com/breaccbournemouth/",
-    socialLabel: "Instagram · @BREACCBournemouth",
+    socials: [
+      { url: "https://www.facebook.com/breaccbournemouth", label: "Facebook · breaccobournemouth" },
+      { url: "https://www.instagram.com/breaccbournemouth/", label: "Instagram · @BREACCBournemouth" },
+    ],
   },
   {
     key: "twickenham",
     address: "Waldegrave School, Fifth Cross Rd, Twickenham, London TW2 5LH",
-    social: "https://www.facebook.com/breaccschool",
-    socialLabel: "Facebook · BREACCSCHOOL",
+    socials: [
+      { url: "https://www.facebook.com/breaccschool", label: "Facebook · BREACCSCHOOL" },
+      { url: "https://www.instagram.com/breaccschool/", label: "Instagram · @breaccschool" },
+    ],
   },
 ];
 
@@ -43,14 +47,19 @@ const Locations = () => {
                 <Clock className="w-5 h-5 text-accent shrink-0" />
                 <p className="text-muted-foreground text-sm">{t(`locations.${loc.key}_schedule`)}</p>
               </div>
-              <a
-                href={loc.social}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline"
-              >
-                <ExternalLink className="w-4 h-4" /> {loc.socialLabel}
-              </a>
+              <div className="flex flex-col gap-2">
+                {loc.socials.map((s) => (
+                  <a
+                    key={s.url}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline"
+                  >
+                    <ExternalLink className="w-4 h-4" /> {s.label}
+                  </a>
+                ))}
+              </div>
             </div>
           ))}
         </div>
