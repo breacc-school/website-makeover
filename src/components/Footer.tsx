@@ -41,6 +41,20 @@ const Footer = () => {
           </p>
         </div>
 
+        <div className="max-w-lg mx-auto mb-6 text-center">
+          <a
+            href="https://forms.gle/9SpcurUZGr6RSjyr6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-secondary text-secondary-foreground font-bold px-6 py-3 text-sm hover:brightness-110 transition-all"
+          >
+            {t("footer.enrol_button")}
+          </a>
+          <p className="mt-4 text-primary-foreground/60 text-sm">
+            {t("footer.enrol_or")}
+          </p>
+        </div>
+
         <form
           onSubmit={onSubmit}
           className="max-w-lg mx-auto mb-12 flex flex-col gap-4"

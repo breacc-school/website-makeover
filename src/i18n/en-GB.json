@@ -16,6 +16,7 @@
   "hero": {
     "welcome": "Welcome to",
     "subtitle": "Brazilian Educational and Cultural Centre — Preserving Brazilian language and culture in the United Kingdom since 1997.",
+    "cta_enrol": "Enrol Now",
     "cta_groups": "Discover our groups",
     "cta_visit": "Book a visit",
     "prev": "Previous",
@@ -167,6 +168,8 @@
   },
   "footer": {
     "title": "Get in Touch",
+    "enrol_button": "Fill in the enrolment form",
+    "enrol_or": "Or send us a message by filling in the form below:",
     "subtitle": "Come to BREACC! Contact us for enrolment and more information.",
     "form_subject": "New message from the BREACC website",
     "name": "Name",

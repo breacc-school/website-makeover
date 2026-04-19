@@ -81,18 +81,19 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
-              href="#grupos"
-              onClick={(e) => scrollToSection(e, "grupos")}
+              href="https://forms.gle/9SpcurUZGr6RSjyr6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-secondary text-secondary-foreground font-bold text-lg hover:brightness-110 transition-all"
             >
-              {t("hero.cta_groups")}
+              {t("hero.cta_enrol")}
             </a>
             <a
-              href="#contato"
-              onClick={(e) => scrollToSection(e, "contato")}
+              href="#grupos"
+              onClick={(e) => scrollToSection(e, "grupos")}
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-primary-foreground/30 text-primary-foreground font-bold text-lg hover:bg-primary-foreground/10 transition-all"
             >
-              {t("hero.cta_visit")}
+              {t("hero.cta_groups")}
             </a>
           </div>
         </div>

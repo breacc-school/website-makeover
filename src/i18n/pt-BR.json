@@ -16,6 +16,7 @@
   "hero": {
     "welcome": "Bem-vindos ao",
     "subtitle": "Brazilian Educational and Cultural Centre — Preservando a língua e cultura brasileira no Reino Unido desde 1997.",
+    "cta_enrol": "Matricule-se",
     "cta_groups": "Conheça nossos grupos",
     "cta_visit": "Agende uma visita",
     "prev": "Anterior",
@@ -167,6 +168,8 @@
   },
   "footer": {
     "title": "Fale Conosco",
+    "enrol_button": "Preencher formulário de matrícula",
+    "enrol_or": "Ou envie-nos um email preenchendo o formulário abaixo:",
     "subtitle": "Venha para o BREACC! Entre em contato para matrículas e mais informações.",
     "form_subject": "Nova mensagem pelo site do BREACC",
     "name": "Nome",
