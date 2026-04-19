@@ -20,6 +20,7 @@ const navItems: NavItem[] = [
       { key: "about", type: "scroll", id: "sobre" },
       { key: "history", type: "route", href: "/historia" },
       { key: "team", type: "route", href: "/equipe" },
+      { key: "pedagogy", type: "route", href: "/projeto-pedagogico" },
       { key: "groups", type: "scroll", id: "grupos" },
       { key: "locations", type: "scroll", id: "unidades" },
     ],
