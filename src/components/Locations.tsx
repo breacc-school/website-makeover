@@ -5,14 +5,14 @@ const locations = [
   {
     key: "bournemouth",
     address: "Anglo Continental School, 29-35 Wimborne RD, Bournemouth BH2 6NA",
-    social: "https://www.facebook.com/breaccbournemouth",
-    socialLabel: "Facebook",
+    social: "https://www.instagram.com/breaccbournemouth/",
+    socialLabel: "Instagram · @BREACCBournemouth",
   },
   {
     key: "twickenham",
     address: "Waldegrave School, Fifth Cross Rd, Twickenham, London TW2 5LH",
-    social: "https://www.instagram.com/breaccschool/",
-    socialLabel: "Instagram",
+    social: "https://www.facebook.com/breaccschool",
+    socialLabel: "Facebook · BREACCSCHOOL",
   },
 ];
 
