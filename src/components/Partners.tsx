@@ -25,7 +25,7 @@ const Partners = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="py-14 bg-muted/40">
+    <section className="py-14 bg-background">
       <div className="container px-4">
         <div className="text-center mb-8">
           <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">
