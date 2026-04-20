@@ -6,18 +6,18 @@ import dorsetCommLogo from "@/assets/partners/dorset_comm.jpeg";
 import dorsetRaceLogo from "@/assets/partners/dorset_race.webp";
 
 const partners = [
-  { src: bcpLogo, alt: "BCP Council", invert: true },
-  { src: canLogo, alt: "Community Action Network", invert: false },
-  { src: communityFundLogo, alt: "Community Fund", invert: false },
-  { src: dorsetCommLogo, alt: "Dorset Community", invert: false },
-  { src: dorsetRaceLogo, alt: "Dorset Race Equality", invert: false },
+  { src: bcpLogo, alt: "BCP Council" },
+  { src: canLogo, alt: "Community Action Network" },
+  { src: communityFundLogo, alt: "Community Fund" },
+  { src: dorsetCommLogo, alt: "Dorset Community" },
+  { src: dorsetRaceLogo, alt: "Dorset Race Equality" },
 ];
 
-const Logo = ({ src, alt, invert }: { src: string; alt: string; invert: boolean }) => (
+const Logo = ({ src, alt }: { src: string; alt: string }) => (
   <img
     src={src}
     alt={alt}
-    className={`h-14 w-auto max-w-[160px] object-contain flex-shrink-0 ${invert ? "brightness-0" : ""}`}
+    className="h-20 w-auto max-w-[200px] object-contain flex-shrink-0"
   />
 );
 
@@ -37,17 +37,17 @@ const Partners = () => {
         </div>
 
         {/* Desktop: static row */}
-        <div className="hidden md:flex flex-wrap justify-center items-center gap-10">
+        <div className="hidden md:flex flex-wrap justify-center items-center gap-12">
           {partners.map((p) => (
-            <Logo key={p.alt} {...p} />
+            <Logo key={p.alt} src={p.src} alt={p.alt} />
           ))}
         </div>
 
         {/* Mobile: auto-scrolling marquee */}
         <div className="md:hidden overflow-hidden">
-          <div className="flex items-center gap-10 animate-marquee w-max">
+          <div className="flex items-center gap-12 animate-marquee w-max">
             {[...partners, ...partners].map((p, i) => (
-              <Logo key={`${p.alt}-${i}`} {...p} />
+              <Logo key={`${p.alt}-${i}`} src={p.src} alt={p.alt} />
             ))}
           </div>
         </div>
