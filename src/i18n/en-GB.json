@@ -173,8 +173,13 @@
     "a12": "BREACC accepts enrolments all year round, subject to availability. Please contact us by email: info@breacc.com.",
     "q13": "What are the fees and payment methods?",
     "a13": "Enrolment: £20 per family. Twickenham: 12× £54.50/month. Bournemouth: 12× £38.50/month. Families with more than one child receive a discount. Payment by direct debit.",
+    "q14": "What is the 2026/2027 calendar?",
+    "a14": "See the 2026/2027 term calendar for each location below.",
     "calendar_bh": "Term Calendar — Bournemouth 2025/2026",
-    "calendar_tw": "Term Calendar — Twickenham 2025/2026"
+    "calendar_tw": "Term Calendar — Twickenham 2025/2026",
+    "calendar_bh_2627": "Term Calendar — Bournemouth 2026/2027",
+    "calendar_tw_2627": "Term Calendar — Twickenham 2026/2027",
+    "calendars_cta": "Check our term calendar"
   },
   "gallery": {
     "title": "Gallery",

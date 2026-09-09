@@ -173,8 +173,13 @@
     "a12": "O BREACC aceita matrículas o ano todo, desde que haja vagas disponíveis. Entre em contato por email: info@breacc.com.",
     "q13": "Quais são os valores e formas de pagamento?",
     "a13": "Matrícula: £20 por família. Twickenham: 12× £54.50/mês. Bournemouth: 12× £38.50/mês. Famílias com mais de uma criança têm desconto. Pagamento por direct debit.",
+    "q14": "Qual o calendário de 2026/2027?",
+    "a14": "Confira abaixo o calendário letivo de 2026/2027 de cada unidade.",
     "calendar_bh": "Calendário Letivo — Bournemouth 2025/2026",
-    "calendar_tw": "Calendário Letivo — Twickenham 2025/2026"
+    "calendar_tw": "Calendário Letivo — Twickenham 2025/2026",
+    "calendar_bh_2627": "Calendário Letivo — Bournemouth 2026/2027",
+    "calendar_tw_2627": "Calendário Letivo — Twickenham 2026/2027",
+    "calendars_cta": "Confira nosso calendário letivo"
   },
   "gallery": {
     "title": "Galeria",

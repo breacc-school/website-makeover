@@ -1,6 +1,8 @@
 import { CalendarDays, MapPin, Clock, CheckCircle2 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { useLangPath } from "@/lib/i18n-routing";
 
 interface Event {
   titleKey: string;
@@ -55,6 +57,8 @@ const typeStyles = {
 
 const UpcomingEvents = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const faqPath = useLangPath("/faq");
 
   const typeBadge = {
     "open-day": t("events.open_day"),
@@ -118,6 +122,17 @@ const UpcomingEvents = () => {
           <p className="mt-3 text-muted-foreground max-w-lg mx-auto">
             {t("events.subtitle")}
           </p>
+          <a
+            href={faqPath}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(faqPath, { state: { openFaq: 14 } });
+            }}
+            className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-bold hover:brightness-110 transition-all"
+          >
+            <CalendarDays className="w-5 h-5" />
+            {t("faq.calendars_cta")}
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
